@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址已迁移 - 请访问新地址</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+            background: #0f2027;
+            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+        }
+
+        /* 粒子背景动画 */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 40px 50px;
+            max-width: 650px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+            transform-style: preserve-3d;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: #ff4757;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 2.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        p {
+            margin: 18px 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .new-url {
+            font-size: 1.8rem;
+            margin: 30px 0;
+            padding: 18px 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .new-url::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(69, 170, 242, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .new-url:hover::before {
+            left: 100%;
+        }
+
+        .new-url:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(69, 170, 242, 0.2);
+        }
+
+        a {
+            color: #2d98da;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #45aaf2;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #45aaf2, #2d98da);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(69, 170, 242, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 30px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .new-url {
+                font-size: 1.4rem;
+                padding: 15px;
+            }
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <h1>当前网址已迁移</h1>
+        <p>您访问的旧网址已停止使用，我们已迁移至全新地址</p>
+        <p>请收藏以下新网址，以便下次快速访问：</p>
+        
+        <div class="new-url">
+            <a href="http://dh.wdwlgj.com" id="newUrl">dh.wdwlgj.com</a>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="window.location.href='http://dh.wdwlgj.com'">
+                <span class="icon">→</span>立即访问新网站
+            </button>
+            <button class="btn btn-secondary" id="addToBookmark">
+                <span class="icon">⭐</span>添加到收藏夹
+            </button>
+        </div>
+    </div>
+
+    <!-- 粒子JS库 -->
+    <script src="./particles.min.js"></script>
+    
+    <script>
+        // 初始化粒子动画
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                }
+            }
+        });
+
+        // 添加到收藏夹功能
+        document.getElementById('addToBookmark').addEventListener('click', function() {
+            const url = document.getElementById('newUrl').href;
+            const title = '网站新地址 - dh.wdwlgj.com';
+            
+            try {
+                // Chrome, Firefox, IE
+                if (window.sidebar && window.sidebar.addPanel) {
+                    window.sidebar.addPanel(title, url, '');
+                } 
+                // Safari
+                else if (window.external && ('AddFavorite' in window.external)) {
+                    window.external.AddFavorite(url, title);
+                } 
+                // 其他浏览器
+                else {
+                    alert('请按 Ctrl+D (Windows) 或 Command+D (Mac) 手动添加收藏');
+                }
+            } catch (e) {
+                alert('您的浏览器阻止了自动收藏，请手动添加：\n1. 按Ctrl+D\n2. 点击地址栏左侧的⭐图标');
+            }
+        });
+    </script>
+</body>
+</html>
