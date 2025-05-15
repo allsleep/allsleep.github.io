@@ -239,20 +239,22 @@
         let seconds = 10;
         const countdownEl = document.getElementById('countdown');
         const currentPath = window.location.pathname;
+        const currentSearch = window.location.search;
         const timer = setInterval(() => {
             seconds--;
             countdownEl.textContent = `${seconds}秒后自动跳转到新网址...`;
             
             if (seconds <= 0) {
                 clearInterval(timer);
-                window.location.href = 'https://dh.wdwlgj.com' + currentPath;
+                window.location.href = 'https://dh.wdwlgj.com' + currentPath + currentSearch;
             }
         }, 1000);
 
 
         function getNewUrl(){
             const currentPath = window.location.pathname;
-            return 'https://dh.wdwlgj.com' + currentPath; 
+            const currentSearch = window.location.search;
+            return 'https://dh.wdwlgj.com' + currentPath + currentSearch; 
         }
 
         document.getElementById("newUrl").href = getNewUrl();
