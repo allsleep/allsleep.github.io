@@ -217,11 +217,11 @@
         <p>请收藏以下新网址，以便下次快速访问：</p>
         
         <div class="new-url">
-            <a href="http://dh.wdwlgj.com" id="newUrl">dh.wdwlgj.com</a>
+            <a href="#" id="newUrl">dh.wdwlgj.com</a>
         </div>
         
         <div class="buttons">
-            <button class="btn btn-primary" onclick="window.location.href='http://dh.wdwlgj.com'">
+            <button class="btn btn-primary" onclick="window.location.href=getNewUrl()">
                 <span class="icon">→</span>立即访问新网站
             </button>
             <button class="btn btn-secondary" id="addToBookmark" onclick="alert('您的浏览器阻止了自动收藏，请手动添加：\n1. 按Ctrl+D\n2. 点击地址栏左侧的⭐图标');">
@@ -248,6 +248,14 @@
                 window.location.href = 'https://dh.wdwlgj.com' + currentPath;
             }
         }, 1000);
+
+
+        function getNewUrl(){
+            const currentPath = window.location.pathname;
+            return 'https://dh.wdwlgj.com' + currentPath; 
+        }
+
+        document.getElementById("newUrl").href = getNewUrl();
     </script>
 </body>
 </html>
