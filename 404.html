@@ -167,6 +167,12 @@
             font-size: 1.2rem;
         }
 
+        .countdown {
+            color: #64748b;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -222,30 +228,25 @@
                 <span class="icon">⭐</span>添加到收藏夹
             </button>
         </div>
+
+        <div class="countdown" id="countdown">
+            10秒后自动跳转到新网址...
+        </div>
     </div>
 
     <!-- 粒子JS库 -->    
     <script>
-        // 初始化粒子动画
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": true },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                }
+        let seconds = 10;
+        const countdownEl = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = `${seconds}秒后自动跳转到新网址...`;
+            
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://dh.wdwlgj.com';
             }
-        });
+        }, 1000);
     </script>
 </body>
 </html>
