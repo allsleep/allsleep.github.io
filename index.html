@@ -218,15 +218,13 @@
             <button class="btn btn-primary" onclick="window.location.href='http://dh.wdwlgj.com'">
                 <span class="icon">→</span>立即访问新网站
             </button>
-            <button class="btn btn-secondary" id="addToBookmark">
+            <button class="btn btn-secondary" id="addToBookmark" onclick="alert('您的浏览器阻止了自动收藏，请手动添加：\n1. 按Ctrl+D\n2. 点击地址栏左侧的⭐图标');">
                 <span class="icon">⭐</span>添加到收藏夹
             </button>
         </div>
     </div>
 
-    <!-- 粒子JS库 -->
-    <script src="./particles.min.js"></script>
-    
+    <!-- 粒子JS库 -->    
     <script>
         // 初始化粒子动画
         particlesJS("particles-js", {
@@ -246,29 +244,6 @@
                     "onclick": { "enable": true, "mode": "push" },
                     "resize": true
                 }
-            }
-        });
-
-        // 添加到收藏夹功能
-        document.getElementById('addToBookmark').addEventListener('click', function() {
-            const url = document.getElementById('newUrl').href;
-            const title = '网站新地址 - dh.wdwlgj.com';
-            
-            try {
-                // Chrome, Firefox, IE
-                if (window.sidebar && window.sidebar.addPanel) {
-                    window.sidebar.addPanel(title, url, '');
-                } 
-                // Safari
-                else if (window.external && ('AddFavorite' in window.external)) {
-                    window.external.AddFavorite(url, title);
-                } 
-                // 其他浏览器
-                else {
-                    alert('请按 Ctrl+D (Windows) 或 Command+D (Mac) 手动添加收藏');
-                }
-            } catch (e) {
-                alert('您的浏览器阻止了自动收藏，请手动添加：\n1. 按Ctrl+D\n2. 点击地址栏左侧的⭐图标');
             }
         });
     </script>
